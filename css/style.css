@@ -1,0 +1,455 @@
+/* Copyright 2016 Carlos Eduardo Alfaro Orellana*/
+/*=====================================
+Importando hojas de estilo externas
+=====================================*/
+@import 'normalize.css';
+@import 'material.min.css';
+@import 'material-design-iconic-font.min.css';
+/*=====================================================
+					Tipografia
+======================================================*/
+@font-face{
+    font-family: "RobotoCondensedLight";
+    src: url("../fonts/robotocondensed-light.ttf"), 
+    url("../fonts/robotocondensed-light.eot"), 
+    url("../fonts/robotocondensed-light.woff"), 
+    url("../fonts/robotocondensed-light.woff2"), 
+    url("../fonts/robotocondensed-light.svg");
+}
+@font-face{
+    font-family: "RobotoRegular";
+    src: url("../fonts/roboto-regular.ttf"), 
+    url("../fonts/roboto-regular.eot"), 
+    url("../fonts/roboto-regular.woff"), 
+    url("../fonts/roboto-regular.woff2"), 
+    url("../fonts/roboto-regular.svg");
+}
+@font-face{
+    font-family: "OswaldLight";
+    src: url("../fonts/oswald-light.ttf"), 
+    url("../fonts/oswald-light.eot"), 
+    url("../fonts/oswald-light.woff"), 
+    url("../fonts/oswald-light.woff2"), 
+    url("../fonts/oswald-light.svg");
+}
+/*=====================================================
+					Estilos generales
+======================================================*/
+html, body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: "RobotoRegular";
+	position: relative;
+	background-color: #fff;
+}
+.text-condensed{ font-family: "RobotoCondensedLight"; }
+.text-tittles{ font-family: "OswaldLight"; }
+.text-center{ text-align: center; }
+.text-left{ text-align: left; }
+.text-right{ text-align: right; }
+.text-justify{ text-align: justify; }
+.full-width{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+.list-unstyled{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+}
+.img-responsive{
+	width: 100%;
+	height: auto;
+}
+.divider{
+	height: 0 !important;
+	border-top: 1px solid #ECECEC;
+	width: 92% !important;
+	margin: 0 auto !important;
+}
+.cover{
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #fff;
+}
+.center-box{
+	margin: 0 auto;
+	display: block;
+}
+.center-box-h-v{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.mdl-textfield{
+	width: 100%;
+}
+/*========= Barra de navegacion */
+.NavBar{
+	height: 50px;
+	background-color: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	color: #fff;
+}
+.NavBar-logo,
+.NavBar-nav{
+	height: 50px;
+	line-height: 50px;
+	float: left;
+}
+.NavBar-logo{
+	font-size: 27px;
+	width: 30%;
+}
+.NavBar-logo figure{
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+}
+.NavBar-nav{
+	width: 70%;
+	text-align: right;
+}
+.NavBar-nav li,
+.NavBar-nav li a{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 50px;
+}
+.NavBar-nav li{
+	display: inline-block;
+}
+.NavBar-nav li a{
+	display: block;
+	text-decoration: none;
+	color: #FFF;
+	font-family: "OswaldLight";
+	font-size: 17px;
+	padding: 0 7px;
+	transition: all .3s ease-in-out;
+}
+.NavBar-nav li a:hover{
+	color: #D4AC0D;
+}
+.NavBar-nav li a:active,
+.NavBar-nav li a:focus{
+	outline: none;
+}
+/*========= Pie de pagina */
+.mdl-mega-footer{
+	background-color: #000;
+}
+/*========= Contenedores de plantillas */
+.template{
+	max-height: 500px;
+	min-height: 400px;
+	max-width: 370px;
+	position: relative;
+	margin: 10px auto;
+	display: block;
+	border-radius: 4px;
+	border: 1px solid #E1E1E1;
+}
+.template-img{
+	height: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	border-radius: 4px;
+	z-index: 1;
+}
+.template-img img{
+	border-radius: 4px;
+}
+.template-description{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 64px;
+	background-color: #fff;
+	z-index: 2;
+}
+.template-description p,
+.template-description a{
+	height: 100%;
+	position:absolute;
+	top: 0;
+	border-top: 1px solid #E1E1E1;
+}
+.template-description p{
+	width: 80%;
+	left: 0;
+	border-right: 1px solid #E1E1E1;
+	padding: 0 10px;
+	font-size: 17px;
+}
+.template-description a{
+	width: 20%;
+	right: 0;
+	text-align: center;
+}
+.template-description a:hover{
+	background-color: rgb(240,240,240);
+}
+.template-description a i{
+	width: 100%;
+	height: 100%;
+	line-height: 64px;
+	color: #333;
+	font-size: 20px;
+}
+/*=====================================================
+					Estilos index.html
+======================================================*/
+/*========= Encabezado */
+.header{
+	height: 100%;
+	position: relative;
+	background-attachment: inherit;
+	background-image: url(../assets/img/index-header.jpg);
+	overflow: hidden;
+}
+.header-content{
+	padding: 50px 0;
+	position: relative;
+	height: 100%;
+	background-color: rgba(0,0,0,.6);
+}
+.header-content-div{
+	width: 100%;
+	color: #fff;
+}
+.header-content-div ul li{
+	display: inline-block;
+	width: 300px;
+}
+.header-content-div ul li a{
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	box-sizing: border-box;
+	padding: 15px;
+	margin: 15px;
+	transition: all .3s ease-in-out;
+}
+.header-content-div ul li a:hover{
+	background-color: rgba(0,0,0,.4);
+}
+.header-content-div ul li a i{
+	font-size: 30px;
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
+	border-radius: 100%;
+	border: 1px solid rgba(255,255,255,.5);
+}
+/*========= Seccion framework */
+.tecnologies{
+	padding: 35px 0;
+}
+.tecnologies-content{
+	padding: 10px;
+}
+.tecnologies-content i{
+	color: #0288D1;
+}
+.framework-icon{
+	width: 170px;
+}
+.browser-icon{
+	width: 120px;
+}
+/*========= Seccion mision y vision */
+.mision-vision{
+	background-image: url(../assets/img/index-MV.jpg);
+	background-attachment: inherit;
+	color: #FFF;
+	min-height: 500px;
+}
+.mision-vision-content{
+	height: 100%;
+	position: relative;
+	min-height: 500px;
+	background-color: rgba(0,0,0,.4);
+}
+/*========= Desarrolladores y contacto */
+.contact{
+	background-color: #FAFAFA;
+	padding: 60px 0;
+}
+.developer-content{
+	margin-bottom: 25px;
+}
+.developer-content figure img{
+	width: 140px;
+	border-radius: 100%;
+}
+.developer-content figure figcaption{
+	padding: 10px 0;
+}
+.developer-content ul li{
+	display: inline-block;
+}
+.developer-content ul li a{
+	outline: none;
+	font-size: 23px;
+	padding: 5px;
+	margin: 0 2px;
+	color: #3F51B5;
+}
+/*=====================================================
+				Estilos tutorials.html
+======================================================*/
+.card-container{
+	padding: 10px;
+}
+.card-tutorials{
+	width: 100%;
+	margin: 0 auto;
+}
+.card-tutorials-border{
+	height: 7px;
+}
+.mdl-card__supporting-text{
+	height: 127px;
+	overflow-y: hidden;
+}
+.mdl-card__supporting-text:hover{
+	overflow-y: scroll;
+}
+/*=====================================================
+					Break-Points
+======================================================*/
+/*Phone*/
+@media (max-width: 479px){
+	.hide-on-phone{
+		width: 0 !important;
+		height: 0 !important;
+		pointer-events: none !important;
+		opacity: 0 !important;
+	}
+	.visible-on-phone{
+		pointer-events: auto !important;
+		opacity: 1 !important;
+	}
+	.visible-on-tablet,
+	.visible-on-desktop{
+		pointer-events: none !important;
+		opacity: 0 !important;
+		width: 0 !important;
+		height: 0 !important;
+	}
+	.No-Scroll{
+		overflow: hidden !important;	
+	}
+	/*========= Barra de navegacion */
+	.NavBar-logo{
+		width: 100%;
+		font-size: 22px;
+	}
+	.NavBar-nav{
+		position: fixed;
+		width: 100%;
+		height: 0;
+		background-color: #000;
+		z-index: 17;
+		top: 50px;
+		border-top: 1px solid rgba(255,255,255,.2);
+		transition: all .3s ease-in-out;
+		opacity: 0;
+		pointer-events: none;
+	}
+	.NavBar-nav li{
+		display: block;
+	}
+	.NavBar-nav li a{
+		padding: 0;
+		text-align: center;
+	}
+	.NavBar-show{
+		height: 100%;
+		opacity: 1;
+		pointer-events: auto;
+	}
+	.btn-menu-mobile{
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 50px;
+		width: 50px;
+		line-height: 50px;
+		font-size: 25px;
+		margin: 0;
+		cursor: pointer;
+		z-index: 7;
+		text-align: center;
+	}
+	/*========= Header index */
+	.header-content-div ul li a{
+		margin: 7px 0;
+	}
+}
+
+/*Tablet*/
+@media (min-width: 480px) and (max-width: 839px){
+	.hide-on-tablet{
+		width: 0 !important;
+		height: 0 !important;
+		pointer-events: none !important;
+		opacity: 0 !important;
+	}
+	.visible-on-tablet{
+		pointer-events: auto !important;
+		opacity: 1 !important;
+	}
+	.visible-on-desktop,
+	.visible-on-phone{
+		pointer-events: none !important;
+		opacity: 0 !important;
+		width: 0 !important;
+		height: 0 !important;
+	}
+}
+
+/*Desktop*/
+@media (min-width: 840px){
+	.hide-on-desktop{
+		width: 0 !important;
+		height: 0 !important;
+		pointer-events: none !important;
+		opacity: 0 !important;
+	}
+	.visible-on-desktop{
+		pointer-events: auto !important;
+		opacity: 1 !important;
+	}
+	.visible-on-tablet,
+	.visible-on-phone{
+		pointer-events: none !important;
+		opacity: 0 !important;
+		width: 0 !important;
+		height: 0 !important;
+	}
+	.rwd-text{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+	}	
+}
